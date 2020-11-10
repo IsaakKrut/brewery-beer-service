@@ -14,13 +14,13 @@ import java.util.UUID;
 /**
  * Created by jt on 2019-05-17.
  */
-        @Getter
-        @Setter
-        @NoArgsConstructor
-        @AllArgsConstructor
-        @Builder
-        @Entity
-        public class Beer {
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Entity
+public class Beer {
 
         @Id
         @GeneratedValue(generator = "UUID")

@@ -2,6 +2,7 @@ package guru.springframework.msscbeerservice.bootstrap;
 
 import guru.springframework.msscbeerservice.domain.Beer;
 import guru.springframework.msscbeerservice.repositories.BeerRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -11,6 +12,9 @@ import java.util.UUID;
 /**
  * Created by jt on 2019-05-17.
  */
+
+@RequiredArgsConstructor
+@Component
 public class BeerLoader implements CommandLineRunner {
 
     public static final String BEER_1_UPC = "0631234200036";
@@ -22,13 +26,9 @@ public class BeerLoader implements CommandLineRunner {
 
     private final BeerRepository beerRepository;
 
-    public BeerLoader(BeerRepository beerRepository) {
-        this.beerRepository = beerRepository;
-    }
-
     @Override
     public void run(String... args) throws Exception {
-       /* loadBeerObjects();
+        loadBeerObjects();
     }
 
     private void loadBeerObjects() {
@@ -60,6 +60,6 @@ public class BeerLoader implements CommandLineRunner {
                     .upc(BEER_3_UPC)
                     .price(new BigDecimal("11.95"))
                     .build());
-        }*/
+        }
     }
 }
