@@ -6,7 +6,7 @@
         <!-- https://mvnrepository.com/artifact/com.github.sfg-beer-works/sfg-beer-works-bom -->
             <groupId>com.github.sfg-beer-works</groupId>
             <artifactId>sfg-brewery-bom</artifactId>
-            <version>1.0.17</version>
+            <version>1.0.7</version>
     </parent>
 
     <groupId>guru.springframework</groupId>
