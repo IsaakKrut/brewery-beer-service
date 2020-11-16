@@ -17,7 +17,7 @@ import java.util.UUID;
  * Created by jt on 2019-05-12.
  */
 @RequiredArgsConstructor
-@RequestMapping("/api/v1")
+@RequestMapping("/api/v1/")
 @RestController
 public class BeerController {
 
@@ -27,7 +27,7 @@ public class BeerController {
 
     private final BeerService beerService;
 
-    @GetMapping(value = "/beer", produces = { "application/json" })
+    @GetMapping(value = "beer", produces = { "application/json" })
     public ResponseEntity<BeerPagedList> listBeers(@RequestParam(value = "pageNumber", required = false) Integer pageNumber,
                                                    @RequestParam(value = "pageSize", required = false) Integer pageSize,
                                                    @RequestParam(value = "beerName", required = false) String beerName,
@@ -65,12 +65,12 @@ public class BeerController {
         return new ResponseEntity<>(beerService.getById(beerId, showInventory), HttpStatus.OK);
     }
 
-    @PostMapping("/beer")
+    @PostMapping("beer")
     public ResponseEntity saveNewBeer(@RequestBody @Validated BeerDto beerDto){
         return new ResponseEntity<>(beerService.saveNewBeer(beerDto), HttpStatus.CREATED);
     }
 
-    @PutMapping("/beer/{beerId}")
+    @PutMapping("beer/{beerId}")
     public ResponseEntity updateBeerById(@PathVariable("beerId") UUID beerId, @RequestBody @Validated BeerDto beerDto){
         return new ResponseEntity<>(beerService.updateBeer(beerId, beerDto), HttpStatus.NO_CONTENT);
     }
